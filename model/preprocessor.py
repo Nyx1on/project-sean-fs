@@ -22,7 +22,8 @@ train_texts, test_texts, train_labels, test_labels = train_test_split(
     texts, binary_labels, test_size=0.3, random_state=42)
 
 # tokenize the text
-tokenizer = Tokenizer(num_words=100000, oov_token="<OOV>")
+tokenizer = Tokenizer(num_words=10000, oov_token="<OOV>")
+
 tokenizer.fit_on_texts(train_texts)
 
 # convert the text into sequences of integers
@@ -39,6 +40,7 @@ test_sequences = tokenizer.texts_to_sequences(test_texts)
 # pad the sequences to have the same length
 train_padded = pad_sequences(
     train_sequences, maxlen=1000, padding='post', truncating='post')
+
 test_padded = pad_sequences(
     test_sequences, maxlen=1000, padding='post', truncating='post')
 

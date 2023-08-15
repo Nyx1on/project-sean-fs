@@ -10,7 +10,7 @@ with open('tokenizer.pickle', 'rb') as f:
     tokenizer = pickle.load(f)
 
 # test the model on new input review
-input_review = "Why is this model so useless, can't even identify if my comments are postive or not";
+input_review = "I  like this class, it's very interesting";
 # preprocess the input review
 input_seq = tokenizer.texts_to_sequences([input_review])
 input_padded = pad_sequences(input_seq, maxlen=1000, padding='post', truncating='post')

@@ -23,20 +23,21 @@ const Home = () => {
   }
   const handleChange = (e) => {
     setInputR(e.target.value);
+    console.log(setInputR);
   };
   return (
     <>
       <div className="home flex flex-row align-middle justify-between">
         <div className="left w-1/2">
-          <h1 className="mt-48 font-fira font-extrabold text-[#ffffff] text-center text-[64px]">
+          <h1 className="mt-32 font-fira font-extrabold text-[#ffffff] text-center text-[32px]">
             Sentiment Analysis
           </h1>
-          <p className="mt-5 max-sm:m-5 text-[#2f9393] text-[32px] w-3/4 mx-auto">
+          <p className="mt-5 max-sm:m-5 text-[#2f9393] text-[24px] w-3/4 mx-auto">
             Instantly evaluate the sentiment of any comment by entering it into
             the prompt. Gain valuable insights into the emotional tone of your
             text with the model developed by us.
           </p>
-          <p className="mt-5 max-sm:m-5 text-[#666e75] text-[18px]  w-3/4 mx-auto">
+          <p className="mt-5 max-sm:m-5 text-[#666e75] text-[14px]  w-3/4 mx-auto">
             <i>
               Note:For accurate results, please provide precise and detailed
               comments when using our website.
@@ -63,21 +64,21 @@ const Home = () => {
             </button>
             <div className="mx-auto mt-16 mb-0">
               {data.Predictions === "positive" ? (
-                <div className="text-[#888B64] text-[32px]">
+                <div className="text-[#888B64] text-[24px]">
                   The comment seems to be <strong>Positive</strong>
                 </div>
               ) : (
                 <></>
               )}
               {data.Predictions === "negative" ? (
-                <div className="text-[#867659] text-[32px]">
+                <div className="text-[#867659] text-[24px]">
                   The comment seems to be <strong>Negative</strong>
                 </div>
               ) : (
                 <></>
               )}
             </div>
-            <div className="max-sm:mx-9 font-normal text-white absolute bottom-0 left-0 mb-8 ml-8 flex flex-row items-center">
+            <div className="max-sm:mx-9 font-normal text-white absolute bottom-0 left-0 mb-4 ml-8 flex flex-row items-center">
               Follow us on Github:
               <a href="https://github.com/Nyx1on/project-sean-fs">
                 <img src={github} alt="github icon" className="mx-2" />

@@ -9,7 +9,7 @@ with open('preprocessed_data.pickle', 'rb') as f:
 
 
 model = keras.Sequential([
-    layers.Embedding(input_dim=100000, output_dim=32, input_length=1000),
+    layers.Embedding(input_dim=10000, output_dim=32, input_length=1000),
     layers.GlobalAveragePooling1D(),
     layers.Dense(16, activation='relu'),
     layers.Dense(1, activation='sigmoid')
@@ -27,6 +27,5 @@ model.fit(train_padded, train_labels, epochs=10,
 test_loss, test_acc = model.evaluate(test_padded, test_labels)
 print('Test loss:', test_loss)
 print('Test accuracy:', test_acc)
-
 
 model.save('sentimental_analysis_model.h5')

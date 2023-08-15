@@ -34,13 +34,13 @@ def predict(request):
             input_seq = tokenizer.texts_to_sequences([input_review])
             input_padded = pad_sequences(
                 input_seq, maxlen=1000, padding='post', truncating='post')
-
+            
             # Make prediction using the trained model
             prediction = model.predict(input_padded)[0][0]
         else:
             return JsonResponse({"Predictions": "Invalid input"})
 
-        if prediction > 0.49:
+        if prediction > 0.5:
             sentiment = "positive"
         else:
             sentiment = "negative"
